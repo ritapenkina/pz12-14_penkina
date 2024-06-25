@@ -1,0 +1,23 @@
+﻿<Window x:Class="pz2_penkina.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pz2_penkina"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+        <ListView x:Name="Contacts" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="358,10,30,20" SelectionChanged="Contacts_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Контакт" Width="200" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Телефон" Width="200" DisplayMemberBinding="{Binding Phone}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="Button1" Content="Экспорт" HorizontalAlignment="Left" Margin="85,141,0,0" VerticalAlignment="Top" Height="26" Width="131" Click="Button1_Click"/>
+        <Button x:Name="Button2" Content="Импорт" HorizontalAlignment="Left" Margin="85,0,0,0" VerticalAlignment="Center" Height="24" Width="131" Click="Button2_Click"/>
+
+    </Grid>
+</Window>
